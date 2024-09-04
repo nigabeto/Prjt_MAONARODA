@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddServico";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>Serviços</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Serviços</a></li>
+        <li class="breadcrumb-item active"><a>Adcionar Serviço</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Servico/ServicoList">Lista de Serviços</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Servico/ServicoList'">Lista de Serviços</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class="box box-primary">
+                @using (Html.BeginForm("AddServico", "Servico", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/ServicoForm")
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

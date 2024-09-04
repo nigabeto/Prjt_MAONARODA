@@ -1,0 +1,86 @@
+html {
+	background-color:#F4F4F4;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+body {
+	width: 560px;
+	border: 1px solid #ddd;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	margin: 10px auto;
+	background-color: #FFF;
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+
+nav ul {
+	margin:0;
+	padding:0;
+	text-align: center;
+}
+
+nav ul li {
+	list-style-type:none;
+	display: inline;
+}
+
+nav ul li a {
+	padding: 10px 30px;
+	text-decoration: none;
+	background-color: #6495ed;
+	color: #fff;
+	display: inline-block;
+	margin-right: -3px;
+	width: 120px;
+}
+
+nav ul li a:hover {
+	background-color: #483d8b;
+}
+
+h2 {
+	font-size:30px;
+	font-style:italic;
+	letter-spacing:-0.05em;
+	margin:2px 0 15px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	color:#39C;
+	text-shadow: 2px 2px 2px #000;
+}
+
+input {
+	display:block;
+	margin-bottom:20px;
+	border:1px solid #999;
+	padding:8px;
+    border-radius:3px;
+}
+
+input:focus {
+	border:1px solid #ccc;
+	outline:none;
+}
+
+input[type=submit] {
+	width:100px;
+	color:#FFF;
+	background-image: linear-gradient(top, #F33, #933);
+	background-image: -webkit-linear-gradient(top, #F33, #933);
+	background-image: -moz-linear-gradient(top, #F33, #933);
+	border:1px solid #333;
+	cursor:pointer;
+}
+
+input[type=reset] {
+	width:100px;
+	color:#FFF;
+	background-image: linear-gradient(top, #F33, #933);
+	background-image: -webkit-linear-gradient(top, #F33, #933);
+	background-image: -moz-linear-gradient(top, #F33, #933);
+	border:1px solid #333;
+	cursor:pointer;
+}
+

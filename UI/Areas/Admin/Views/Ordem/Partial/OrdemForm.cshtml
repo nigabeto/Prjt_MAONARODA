@@ -1,0 +1,35 @@
+﻿@model DTO.OrdemDTO
+<div class="box-body">
+    <div class="form-group">
+        <label>Tipo</label>
+        @Html.DropDownList("Tipo", new SelectList(new[] { "Mecânica", "Elétrica", "Funilaria", "Chaveiro", "Vidraçaria" }), new { @class = "form-control select2" })
+    </div>
+    <div class="form-group">
+        <label>Ordem de Serviço</label>
+        @Html.TextBoxFor(x => x.Details, new { @class = "form-control", @placeholder = "Descrição do problema" })
+        @Html.ValidationMessageFor(x => x.Details)
+    </div>
+    <div class="form-group">
+        <label>Data de inicio</label>
+        @Html.TextBoxFor(x => x.DateBegin, new { @class = "form-control", @placeholder = "Data de início" })
+        @Html.ValidationMessageFor(x => x.DateBegin)
+    </div>
+    <div class="form-group">
+        <label>Data de término</label>
+        @Html.TextBoxFor(x => x.DateEnd, new { @class = "form-control", @placeholder = "Data de término" })
+        @Html.ValidationMessageFor(x => x.DateEnd)
+    </div>
+    <div class="form-group">
+        <label>Valor total do serviço</label>
+        @Html.TextBoxFor(x => x.TotalValue, new { @class = "form-control", @placeholder = "Valor total" })
+        @Html.ValidationMessageFor(x => x.TotalValue)
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="Approved" checked="@Model.Approved" value="true">
+        <label class="form-check-label">Aprovado?</label>
+    </div>
+    <input type="number" name="OrdemID" value="@Model.OrdemID" hidden/>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</div>

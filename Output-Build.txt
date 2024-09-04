@@ -1,0 +1,10 @@
+﻿Rebuild started...
+1>------ Rebuild All started: Project: DTO, Configuration: Debug Any CPU ------
+1>  DTO -> C:\Prj_MaoNaRoda\Prjt_MAONARODA\DTO\bin\Debug\DTO.dll
+2>------ Rebuild All started: Project: DAL, Configuration: Debug Any CPU ------
+2>  DAL -> C:\Prj_MaoNaRoda\Prjt_MAONARODA\DAL\bin\Debug\DAL.dll
+3>------ Rebuild All started: Project: BLL, Configuration: Debug Any CPU ------
+3>  BLL -> C:\Prj_MaoNaRoda\Prjt_MAONARODA\BLL\bin\Debug\BLL.dll
+4>------ Rebuild All started: Project: UI, Configuration: Debug Any CPU ------
+4>  UI -> C:\Prj_MaoNaRoda\Prjt_MAONARODA\UI\bin\UI.dll
+========== Rebuild All: 4 succeeded, 0 failed, 0 skipped ==========

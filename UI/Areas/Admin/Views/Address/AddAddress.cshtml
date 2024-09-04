@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddAddress";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>Endereços</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Endereço</a></li>
+        <li class="breadcrumb-item active"><a>Adcionar endereço</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Address/AddressList">Lista de Endereços</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Address/AddressList'">Lista de endereços</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class="box box-primary">
+                @using (Html.BeginForm("AddAddress", "Address", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/AddressForm")
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

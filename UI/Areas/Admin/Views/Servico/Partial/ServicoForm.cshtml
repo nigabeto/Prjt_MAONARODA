@@ -1,0 +1,42 @@
+﻿
+
+@model DTO.ServicoDTO
+<div class="box-body">
+<div class="form-group">
+    <label>Nome do Serviço</label>
+
+</div>
+
+@*<div class="form-group">
+    <label>Nome do Serviço</label>
+    @Html.TextBoxFor(x => x.ServiceName, new { @class = "form-control", @placeholder = "Nome do Serviço" })
+    @Html.ValidationMessageFor(x => x.ServiceName)
+</div>*@
+
+<div class="form-group">
+    <label>Nome do serviço</label>
+    @Html.DropDownList("ServiceName", new SelectList(new[] { "Mecânica", "Elétrica", "Funilaria", "Chaveiro", "Vidraçaria" }), new { @class = "form-control select2" })
+</div>
+
+<div class="form-group">
+    <label>Detalhes do serviço</label>
+    @Html.TextBoxFor(x => x.Details, new { @class = "form-control", @placeholder = "Detalhes do serviço" })
+    @Html.ValidationMessageFor(x => x.Details)
+</div>
+<div class="form-group">
+    <label>Valor do serviço</label>
+    @Html.TextBoxFor(x => x.Value, new { @class = "form-control", @placeholder = "Valor total" })
+    @Html.ValidationMessageFor(x => x.Value)
+</div>
+<div class="form-group">
+    <label>Prazo final</label>
+    @Html.TextBoxFor(x => x.Deadline, new { @class = "form-control", @placeholder = "Data de conclusão" })
+    @Html.ValidationMessageFor(x => x.Deadline)
+</div>
+
+
+<input type="number" hidden name="ServicoID" value="@Model.ServicoID" />
+<div class="card-footer">
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</div></div>
+

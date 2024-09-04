@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dad82bffd5cd434c97ebcf853da53a0d" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Address" Width="1.5" PointX="1.125" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Category" Width="1.5" PointX="3.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Comment" Width="1.5" PointX="7.375" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Contact" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Log_Table" Width="1.5" PointX="13.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Ordem" Width="1.5" PointX="5.375" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Part" Width="1.5" PointX="1.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Post" Width="1.5" PointX="9.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.PostImage" Width="1.5" PointX="11.625" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.PostTag" Width="1.5" PointX="13.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Prestador" Width="1.5" PointX="9.625" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.ProcessType" Width="1.5" PointX="3.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Revendedor" Width="1.5" PointX="3.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.Servico" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.sysdiagram" Width="1.5" PointX="13.875" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRJT_MAONARODAModel.T_User" Width="1.5" PointX="11.625" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Address_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Category_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Post_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Comment_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Comment_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Contact_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Log_Table_ProcessType" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Log_Table_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Ordem_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Parts_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Post_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_PostImage_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_PostTag_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_PostImage_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_PostTag_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Prestador_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Revendedor_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PRJT_MAONARODAModel.FK_Servico_T_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

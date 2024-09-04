@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRJT_MAONARODAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MapPathLarge" Type="varchar(max)" Nullable="false" />
+    <Property Name="MapPathSmall" Type="varchar(max)" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="NameSurname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CommentContent" Type="varchar(max)" Nullable="false" />
+    <Property Name="isApproved" Type="bit" Nullable="false" />
+    <Property Name="ApprovedUserID" Type="int" />
+    <Property Name="ApproveDate" Type="datetime" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VehiclePlate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="VehicleBrand" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VehicleModel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Year" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProblemDescription" Type="varchar(max)" Nullable="false" />
+    <Property Name="isRead" Type="bit" Nullable="false" />
+    <Property Name="ReadUserID" Type="int" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Log_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="ProcessID" Type="int" Nullable="false" />
+    <Property Name="ProcessType" Type="int" Nullable="false" />
+    <Property Name="ProcessCategoryType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="varchar(max)" Nullable="false" />
+    <Property Name="DateBegin" Type="date" />
+    <Property Name="DateEnd" Type="date" />
+    <Property Name="TotalValue" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Deadline" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ShortContent" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PostContent" Type="varchar(max)" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="ViewCount" Type="int" Nullable="false" />
+    <Property Name="SeoLink" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Slider" Type="bit" Nullable="false" />
+    <Property Name="Area1" Type="bit" Nullable="false" />
+    <Property Name="Area2" Type="bit" Nullable="false" />
+    <Property Name="Area3" Type="bit" Nullable="false" />
+    <Property Name="Notification" Type="bit" Nullable="false" />
+    <Property Name="LanguageName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="AddUserID" Type="int" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar(max)" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostTag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+    <Property Name="TagContent" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prestador">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegistrationDate" Type="date" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProcessType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcessName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Revendedor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegistrationDate" Type="date" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servico">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="varchar(max)" Nullable="false" />
+    <Property Name="Value" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Deadline" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="T_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="NameSurname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar(max)" Nullable="false" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Address_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_Table_ProcessType">
+    <End Role="ProcessType" Type="Self.ProcessType" Multiplicity="1" />
+    <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Log_Table">
+        <PropertyRef Name="ProcessType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_Table_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Log_Table">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parts_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Parts" Type="Self.Parts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Parts">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostImage_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostImage" Type="Self.PostImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PostImage">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostImage_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="PostImage" Type="Self.PostImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PostImage">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostTag_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostTag" Type="Self.PostTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PostTag">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostTag_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="PostTag" Type="Self.PostTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PostTag">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prestador_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Prestador" Type="Self.Prestador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Prestador">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Revendedor_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Revendedor" Type="Self.Revendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Revendedor">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servico_T_User">
+    <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
+    <End Role="Servico" Type="Self.Servico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Servico">
+        <PropertyRef Name="LastUpdateUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PRJT_MAONARODAModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log_Table" EntityType="Self.Log_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ordem" EntityType="Self.Ordem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parts" EntityType="Self.Parts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostImage" EntityType="Self.PostImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostTag" EntityType="Self.PostTag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prestador" EntityType="Self.Prestador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcessType" EntityType="Self.ProcessType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Revendedor" EntityType="Self.Revendedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servico" EntityType="Self.Servico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_User" EntityType="Self.T_User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_T_User" Association="Self.FK_Address_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_T_User" Association="Self.FK_Category_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Post" Association="Self.FK_Comment_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_T_User" Association="Self.FK_Comment_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_T_User" Association="Self.FK_Contact_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_Table_ProcessType" Association="Self.FK_Log_Table_ProcessType">
+      <End Role="ProcessType" EntitySet="ProcessType" />
+      <End Role="Log_Table" EntitySet="Log_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_Table_T_User" Association="Self.FK_Log_Table_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Log_Table" EntitySet="Log_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_T_User" Association="Self.FK_Ordem_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parts_T_User" Association="Self.FK_Parts_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Parts" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_Category" Association="Self.FK_Post_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_T_User" Association="Self.FK_Post_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostImage_Post" Association="Self.FK_PostImage_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="PostImage" EntitySet="PostImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostImage_T_User" Association="Self.FK_PostImage_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="PostImage" EntitySet="PostImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostTag_Post" Association="Self.FK_PostTag_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="PostTag" EntitySet="PostTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostTag_T_User" Association="Self.FK_PostTag_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="PostTag" EntitySet="PostTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prestador_T_User" Association="Self.FK_Prestador_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Prestador" EntitySet="Prestador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Revendedor_T_User" Association="Self.FK_Revendedor_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Revendedor" EntitySet="Revendedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servico_T_User" Association="Self.FK_Servico_T_User">
+      <End Role="T_User" EntitySet="T_User" />
+      <End Role="Servico" EntitySet="Servico" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

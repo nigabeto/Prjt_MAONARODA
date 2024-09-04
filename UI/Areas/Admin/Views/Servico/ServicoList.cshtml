@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "ServicoList";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+
+@model List<DTO.ServicoDTO>
+<section class="content-header">
+    <h1>Lista de Serviços</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Serviços</a></li>
+        <li class="breadcrumb-item active"><a>Lista de Serviços</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Servico/AddServico">Adicionar Serviço</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Servico/AddServico'">Adicionar Serviço</button>
+</div>
+<div class="card">
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome do Serviço</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data de término</th>
+                    
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr id="a_@item.ServicoID">
+                        <td>@item.ServiceName</td>
+                        <td>@item.Details</td>
+                        <td>@item.Value</td>
+                        <td>@item.Deadline</td>
+                        
+                        @*<td align="center" valign="middle">
+
+                            <a href="/Admin/Revendedor/UpdateRevendedor/@item.RevendedorID">
+                                <br />
+                                <img src="~/Areas/Admin/Content/Icon/update.png" />
+                            </a>
+
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <br />
+                                <img src="~/Areas/Admin/Content/Icon/delete.png" />
+                            </a>
+                        </td>*@
+                    </tr>
+                </tbody>
+            }
+            <tfoot>
+                <tr>
+                    <th>Nome do Serviço</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data de término</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->

@@ -1,0 +1,51 @@
+﻿@model DTO.AddressDTO
+<div class="box-body">
+    <input name="ID" value="@Model.ID" hidden type="number"/>
+
+    <div class="form-group">
+        <label>Endereço</label>
+        @Html.TextBoxFor(x => x.AddressContent, new { @class = "form-control", @placeholder = "Endereço completo" })
+        @Html.ValidationMessageFor(x => x.AddressContent)
+    </div>
+
+    <div class="form-group">
+        <label>E-mail</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "E-mail" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group">
+        <label>Telefone</label>
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Telefone" })
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+
+    <div class="form-group">
+        <label>Telefone 2</label>
+        @Html.TextBoxFor(x => x.Phone2, new { @class = "form-control", @placeholder = "Telefone 2" })
+        @Html.ValidationMessageFor(x => x.Phone2)
+    </div>
+
+    <div class="form-group">
+        <label>FAX</label>
+        @Html.TextBoxFor(x => x.Fax, new { @class = "form-control", @placeholder = "FAX" })
+        @Html.ValidationMessageFor(x => x.Fax)
+    </div>
+
+    <div class="form-group">
+        <label>Mapa amplo</label>
+        @Html.TextAreaFor(x => x.LargeMapPath, new { @class = "form-control", @placeholder = "Mapa amplo" })
+        @Html.ValidationMessageFor(x => x.LargeMapPath)
+    </div>
+
+    <div class="form-group">
+        <label>Mapa reduzido</label>
+        @Html.TextAreaFor(x => x.SmallMapPath, new { @class = "form-control", @placeholder = "Mapa reduzido" })
+        @Html.ValidationMessageFor(x => x.SmallMapPath)
+    </div>
+
+    <div class="card-footer">
+        <button class="btn btn-primary">Salvar</button>
+    </div>
+
+</div>

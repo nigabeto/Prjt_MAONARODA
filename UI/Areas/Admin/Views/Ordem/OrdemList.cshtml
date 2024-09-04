@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "OrdemList";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+@model List<DTO.OrdemDTO>
+
+<section class="content-header">
+    <h1>Lista de Ordens</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Ordem</a></li>
+        <li class="breadcrumb-item active"><a>Lista de Ordens</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Ordem/AddOrdem">Adicionar Ordem</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Ordem/AddOrdem'">Adicionar ordem</button>
+</div>
+<div class="card">
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Chamado</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
+                    <th>Valor Total</th>
+                    <th>Aprovado</th>
+                    <th>Atualizar</th>
+                    <th>Apagar</th>
+
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr id="a_@item.OrdemID">
+                        <td>@item.Tipo</td>
+                        <td>@item.Details</td>
+                        <td>@item.DateBegin</td>
+                        <td>@item.DateEnd</td>
+                        <td>@item.TotalValue</td>
+                        <td>@item.Approved</td>
+
+                        <td align="center" valign="middle">
+                            <a href="/Admin/Ordem/UpdateOrdem/@item.OrdemID">
+                                <br />
+
+                                <img src="~/Areas/Admin/Content/Icon/update.png" />
+
+
+
+                            </a>
+
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <br />
+
+                                <img src="~/Areas/Admin/Content/Icon/delete.png" onclick="AskQuestion('/Admin/Ordem/DeleteOrdem/', @item.OrdemID)" />
+
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            }
+
+
+            <tfoot>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Chamado</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
+                    <th>Valor Total</th>
+                    <th>Aprovado</th>
+                    <th>Atualizar</th>
+                    <th>Apagar</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
+<!-- /.card -->

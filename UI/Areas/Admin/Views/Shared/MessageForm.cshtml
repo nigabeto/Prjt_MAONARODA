@@ -1,0 +1,41 @@
+﻿
+@using UI.Areas.Admin;
+
+@if (ViewBag.ProcessState == BLL.General.Messages.AddSuccess)
+{
+    <div class="alert alert-success">
+        <strong>Operação realizada com sucesso!!!</strong>
+    </div>
+
+}
+else if (ViewBag.ProcessState == BLL.General.Messages.EmptyArea)
+{
+    <div class="alert alert-danger">
+        <strong>Erro! Preencha os campos necessários!!!</strong>
+    </div>
+}
+
+else if (ViewBag.ProcessState == BLL.General.Messages.UpdateSuccess)
+{
+    <div class="alert alert-success">
+        <strong>Atualização realizada com sucesso!!!</strong>
+    </div>
+}
+else if (ViewBag.ProcessState == BLL.General.Messages.ImageMissing)
+{
+    <div class="alert alert-danger">
+        <strong>Erro! Selecione a imagem correta</strong>
+    </div>
+}
+else if (ViewBag.ProcessState == BLL.General.Messages.ExtensionError)
+{
+    <div class="alert alert-danger">
+        <strong>Erro! Selecione a extensão correta</strong>
+    </div>
+}
+else if (ViewBag.ProcessState == BLL.General.Messages.GeneralError)
+{
+    <div class="alert alert-danger">
+        <strong>Erro!</strong>
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddPrestador";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>Prestador de Serviço</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Prestador</a></li>
+        <li class="breadcrumb-item active"><a>Adcionar Prestador</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Prestador/PrestadorList">Lista de Prestadores</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Prestador/PrestadorList'">Lista de Prestadores</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class="box box-primary">
+                @using (Html.BeginForm("AddPrestador", "Prestador", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/PrestadorForm")
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

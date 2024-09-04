@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddParts";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>Peças</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Peças</a></li>
+        <li class="breadcrumb-item active"><a>Adcionar peça</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Parts/PartsList">Lista de Peças</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Parts/PartsList'">Lista de peças</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class="box box-primary">
+                @using (Html.BeginForm("AddParts", "Parts", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/PartsForm")
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

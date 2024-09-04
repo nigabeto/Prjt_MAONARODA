@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "RevendedorList";
+    Layout = "~/Areas/Admin/Views/Shared/AdimnLayout.cshtml";
+}
+@model List<DTO.RevendedorDTO>
+<section class="content-header">
+    <h1>Lista de Revendedores de Peças</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Revendedor</a></li>
+        <li class="breadcrumb-item active"><a>Lista de Revendedores</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    @*<button type="submit" class="btn btn-primary" href="/Admin/Revendedor/AddRevendedor">Adicionar Revendedor</button>*@
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Revendedor/AddRevendedor'">Adicionar Revendedor</button>
+</div>
+<div class="card">
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome do Revendedor</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Data de cadastro</th>
+                    <th>Prestador ativo?</th>
+                    <th>Atualizar</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr id="a_@item.RevendedorID">
+                        <td>@item.DealerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Email</td>
+                        <td>@item.RegistrationDate</td>
+                        <td>@item.Active</td>
+                        <td align="center" valign="middle">
+
+                            <a href="/Admin/Revendedor/UpdateRevendedor/@item.RevendedorID">
+                                <br />
+                                <img src="~/Areas/Admin/Content/Icon/update.png" />
+                            </a>
+
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <br />
+                                <img src="~/Areas/Admin/Content/Icon/delete.png" onclick="AskQuestion('/Admin/Revendedor/DeleteRevendedor/', @item.RevendedorID)" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+            <tfoot>
+                <tr>
+                    <th>Nome do Revendedor</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Data de cadastro</th>
+                    <th>Prestador ativo?</th>
+                    <th>Atualizar</th>
+                    <th>Apagar</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
+<!-- /.card -->
